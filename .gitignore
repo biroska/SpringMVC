@@ -1,0 +1,9 @@
+#################
+## Eclipse
+#################
+/target
+target
+.settings
+.classpath
+/newfitness.lck
+/.project
