@@ -17,26 +17,21 @@
 <form action="logar" method="post">
 	
 <nav class="navbar navbar-default" role="navigation">
-	<div class="container-fluid">
-		<!-- Brand and toggle get grouped for better mobile display -->
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="#">Brand</a>
-		</div>
+	<div class="collapse navbar-collapse"
+		id="bs-example-navbar-collapse-1">
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="#">Inicio</a></li>
+			<li><a href="#">Link</a></li>
+			<li><a href="#">Dropdown </a> </li>
+		</ul>
 	</div>
 </nav>
-	
-	
 				<table>
 				<tr>
 					<td colspan="2" align="center">
 						<div class="page-header">
-							<h2>${usuario.usuario} - Bem vindo!!!</h2>
+							<h2>${label.usuario} - Bem vindo!!!</h2>
+							<h2>${labelusuario} - Bem vindo!!!</h2>
 						</div>
 					</td>
 				</tr>
@@ -57,11 +52,6 @@
 					</c:forEach>
 				</table>
 	</form>
-		
-		
-		
-		
-		
 		</td>
 		<td width="20%">&nbsp;</td>
 	</tr>
