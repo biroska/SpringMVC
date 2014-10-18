@@ -10,7 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class UsuarioController {
+public class UsuarioController extends SistemaController {
 	
 	private List<Usuario> usuarios;
 
@@ -30,6 +30,8 @@ public class UsuarioController {
 		System.out.println("UsuarioController.principal()");
 		iniciarListaUsusarios();
 //		model.addAttribute("usuario", user );
+		model.addAttribute("abaSelecionada", "inicio" );
+		model.addAttribute("exibeMenu", true );
 		model.addAttribute("usuarios", usuarios );
 		return "principal";
 	}
