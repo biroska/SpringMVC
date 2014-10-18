@@ -18,15 +18,12 @@
 <form action="logar" method="post">
 	
 	<jsp:include page="menu.jsp" />
-	<table>
-		<tr>
-			<td colspan="2" align="center">
 				<div class="page-header">
-					<h2><spring:message code="label.usuario" />: ${user.usuario} - Bem vindo!!!</h2>
+					<h2>
+						<div class="alert alert-success alert-dismissible" role="alert">
+							<spring:message code="label.usuario" />: ${user.usuario} - Bem vindo!!!</h2>
+						</div>
 				</div>
-			</td>
-		</tr>
-	</table>
 	<table>
 		<c:forEach items="${usuarios}" var="user">
 			<tr id="${user.id}" >
