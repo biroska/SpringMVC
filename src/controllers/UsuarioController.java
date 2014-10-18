@@ -14,22 +14,11 @@ public class UsuarioController extends SistemaController {
 	
 	private List<Usuario> usuarios;
 
-//	@RequestMapping("principal")
-//	public ModelAndView principal( Usuario user ){
-//		System.out.println("UsuarioController.principal()");
-//		iniciarListaUsusarios();
-//		
-//		ModelAndView model = new ModelAndView("principal");
-//		model.addObject("usuarios", usuarios );
-//		
-//		return model;
-//	}
-	
 	@RequestMapping("principal")
 	public String principal( Usuario user, Model model ){
 		System.out.println("UsuarioController.principal()");
 		iniciarListaUsusarios();
-//		model.addAttribute("usuario", user );
+		model.addAttribute("usuario", user );
 		model.addAttribute("abaSelecionada", "inicio" );
 		model.addAttribute("exibeMenu", true );
 		model.addAttribute("usuarios", usuarios );

@@ -1,6 +1,6 @@
 package controllers;
 
-import java.util.List;
+import javax.servlet.http.HttpSession;
 
 import modelo.Usuario;
 
@@ -17,9 +17,10 @@ public class LoginController {
 	FacadeImpl facade;
 	
 	@RequestMapping("logar")
-	public String logar( Usuario user ){
+	public String logar( Usuario user, HttpSession session ){
 		System.out.println("LoginController.logar(): " + user.getUsuario() +" - "+ user.getSenha() );
 		if ( facade.autenticausuarioSenha( user ) ){
+			session.setAttribute("usuarioLogado", user );
 			return "forward:principal";
 		}else{
 			return "login";

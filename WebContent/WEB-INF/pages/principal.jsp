@@ -22,8 +22,7 @@
 		<tr>
 			<td colspan="2" align="center">
 				<div class="page-header">
-					<h2>${abaSelecionada} - Bem vindo!!!</h2>
-					<h2><spring:message code="label.usuario" /> - Bem vindo!!!</h2>
+					<h2><spring:message code="label.usuario" />: ${user.usuario} - Bem vindo!!!</h2>
 				</div>
 			</td>
 		</tr>

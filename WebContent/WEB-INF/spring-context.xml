@@ -16,14 +16,18 @@
 	
 	<mvc:annotation-driven />
 
-	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-		<property name="basename" value="/WEB-INF/resources/messages" />
-	</bean>
-
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/pages/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
+	
+	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basename" value="/WEB-INF/resources/messages" />
+	</bean>
+	
+	<mvc:interceptors>
+  		<bean class="interceptors.LoggingInterceptor" />
+	</mvc:interceptors>
 
 </beans>
