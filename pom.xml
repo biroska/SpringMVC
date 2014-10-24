@@ -25,10 +25,19 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		
+	    <resources>
+	        <resource>
+	            <directory>WebContent/WEB-INF/resources</directory>
+	            <filtering>true</filtering> 
+	        </resource>
+	    </resources>
+		
 	</build>
 
 	<properties>
 		<spring.version>4.1.1.RELEASE</spring.version>
+		<log4j.version>1.2.17</log4j.version>
 	</properties>
 
 	<dependencies>
@@ -49,6 +58,13 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
+		</dependency>
+		
+		<!-- Log4j -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
 		</dependency>
 		
 		<dependency>
