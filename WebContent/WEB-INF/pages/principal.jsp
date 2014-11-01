@@ -21,8 +21,9 @@
 				<div class="page-header">
 					<h2>
 						<div class="alert alert-success alert-dismissible" role="alert">
-							<spring:message code="label.usuario" />: ${user.usuario} - Bem vindo!!!</h2>
+							<spring:message code="label.usuario" />: ${user.usuario} - Bem vindo!!!
 						</div>
+					</h2>
 				</div>
 	<table>
 		<c:forEach items="${usuarios}" var="user">

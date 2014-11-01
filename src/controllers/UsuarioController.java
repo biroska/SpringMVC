@@ -25,6 +25,18 @@ public class UsuarioController extends SistemaController {
 		return "principal";
 	}
 	
+	@RequestMapping("cadastroUsuario")
+	public String cadastroUsuario( ){
+		System.out.println("UsuarioController.cadastroUsuario()");
+		return "cadastroUsuario";
+	}
+	
+	@RequestMapping("salvarUsuario")
+	public String cadastroUsuario( Usuario user, Model model ){
+		System.out.println("UsuarioController.cadastroUsuario()");
+		return "principal";
+	}
+	
 	private void iniciarListaUsusarios(){
 		int qtdUsers = 5;
 		usuarios = new ArrayList<Usuario>( qtdUsers );

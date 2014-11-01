@@ -12,4 +12,9 @@ public class UsuarioDAO {
 	return ( "biroska".equalsIgnoreCase( user.getUsuario() ) &&
 			 "123456".equalsIgnoreCase( user.getSenha() ) );
 	}
+	
+	public boolean inserirUsuario( Usuario user ){
+		
+		return true;
+	}
 }
