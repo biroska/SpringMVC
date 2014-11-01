@@ -13,7 +13,9 @@
 			<c:if test="${usuarioLogado != null}">
 				<ul class="nav navbar-nav navbar-right">
 	        		<li>
-	        			<a href="#">Logout</a>
+	        			<p class="navbar-text">
+	        				<a href="logoff" class="navbar-link" >Logout</a>
+        				</p>
 	       			</li>
 				</ul>
 			</c:if>	

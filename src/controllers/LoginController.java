@@ -35,4 +35,11 @@ public class LoginController {
 			return "login";
 		}
 	}
+	
+	@RequestMapping("logoff")
+	public String logoff( Usuario user, HttpSession session ){
+		System.out.println("LoginController.logoff()");
+		session.removeAttribute("usuarioLogado");
+		return "login";
+	}
 }
