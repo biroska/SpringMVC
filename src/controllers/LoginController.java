@@ -28,7 +28,7 @@ public class LoginController {
 		logger.error("This is error : " + user.getUsuario() +" - "+ user.getSenha() );
 		logger.fatal("This is fatal : " + user.getUsuario() +" - "+ user.getSenha() );
 		
-		facade.inserirUsuario(user);
+//		facade.inserirUsuario(user);
 		
 		if ( facade.autenticausuarioSenha( user ) ){
 			session.setAttribute("usuarioLogado", user );

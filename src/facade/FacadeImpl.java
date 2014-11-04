@@ -17,9 +17,9 @@ public class FacadeImpl {
 		return usuarioDao.autenticausuarioSenha(user);
 	}
 	
-	public boolean inserirUsuario( Usuario user ){
+	public Long inserirUsuario( Usuario user ){
 		
-		user = new Usuario( new Long(4), "teste4", "123456");
+//		user = new Usuario( new Long(4), "teste4", "123456");
 		
 		return usuarioDao.inserirUsuario(user);
 	}
