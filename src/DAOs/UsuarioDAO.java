@@ -5,7 +5,7 @@ import modelo.Usuario;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class UsuarioDAO {
+public class UsuarioDAO extends UtilDAO {
 
 	public boolean autenticausuarioSenha( Usuario user ){
 		
@@ -15,6 +15,18 @@ public class UsuarioDAO {
 	
 	public boolean inserirUsuario( Usuario user ){
 		
-		return true;
+		String sql = " INSERT INTO usuario " +
+		             " (id, usuario, senha, email) VALUES " +
+				     " ( ?,       ?,     ?,     ?)";
+		        
+int regGravado = getJdbcTemplate().update(sql, new Object[] {
+		        		                 user.getId(),
+		        		                 user.getUsuario(),
+		        		                 user.getSenha(),
+		        		                 user.getEmail() });
+
+System.out.println("UsuarioDAO.inserirUsuario(): " + regGravado );
+		        
+		return regGravado > 0;
 	}
 }
