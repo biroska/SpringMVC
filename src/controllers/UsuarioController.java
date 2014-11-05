@@ -26,14 +26,9 @@ public class UsuarioController extends SistemaController {
 	}
 	
 	@RequestMapping("cadastroUsuario")
-	public String cadastroUsuario( ){
-		System.out.println("UsuarioController.cadastroUsuario()");
-		return "cadastroUsuario";
-	}
-	
-	@RequestMapping("salvarUsuario")
 	public String cadastroUsuario( Usuario user, Model model ){
 		System.out.println("UsuarioController.cadastroUsuario()");
+		model.addAttribute("abaSelecionada", "usuario" );
 		return "principal";
 	}
 	
