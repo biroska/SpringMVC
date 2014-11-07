@@ -8,7 +8,7 @@
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 			<!-- Aba Inicio  -->
-				<li ${abaSelecionada == "inicio" ? "class='active'" : null } ><a href="principal">Inicio</a></li>
+				<li ${abaSelecionada == "inicio" ? "class='active'" : null } ><a href="principal"><spring:message code="label.inicio" /></a></li>
 			
 			<!-- Aba Usuário com DropDown  -->
 				<li ${abaSelecionada == "usuario" ? "class='active dropdown'" : "class='dropdown'" } id="mydropbar">
