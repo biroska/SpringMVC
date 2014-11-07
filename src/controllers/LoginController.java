@@ -32,16 +32,9 @@ public class LoginController {
 		
 		if ( facade.autenticausuarioSenha( user ) ){
 			session.setAttribute("usuarioLogado", user );
-			return "forward:principal";
+			return "forward:menuInicio";
 		}else{
 			return "login";
 		}
-	}
-	
-	@RequestMapping("logoff")
-	public String logoff( Usuario user, HttpSession session ){
-		System.out.println("LoginController.logoff()");
-		session.removeAttribute("usuarioLogado");
-		return "login";
 	}
 }

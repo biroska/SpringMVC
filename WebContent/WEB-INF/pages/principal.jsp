@@ -21,7 +21,7 @@
 				<div class="page-header">
 					<h2>
 						<div class="alert alert-success alert-dismissible" role="alert">
-							<spring:message code="label.usuario" />: ${user.usuario} - Bem vindo!!!
+							${usuarioLogado.usuario} - Bem vindo!!!
 						</div>
 					</h2>
 				</div>

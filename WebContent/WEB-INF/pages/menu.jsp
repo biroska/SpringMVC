@@ -8,13 +8,13 @@
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 			<!-- Aba Inicio  -->
-				<li ${abaSelecionada == "inicio" ? "class='active'" : null } ><a href="principal"><spring:message code="label.inicio" /></a></li>
+				<li ${abaSelecionada == "inicio" ? "class='active'" : null } ><a href="menuInicio"><spring:message code="label.inicio" /></a></li>
 			
 			<!-- Aba Usuário com DropDown  -->
 				<li ${abaSelecionada == "usuario" ? "class='active dropdown'" : "class='dropdown'" } id="mydropbar">
 					<a href="#mydropbar" class="dropdown-toggle" data-toggle="dropdown"><spring:message code="label.usuario" /><b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="cadastroUsuario"><spring:message code="label.cadastro" /></a></li>
+							<li><a href="menuCadastroUsuario"><spring:message code="label.cadastro" /></a></li>
 							<li><a href="cadastroUsuario"><spring:message code="label.consulta" /></a></li>
 						</ul>
 				</li>
