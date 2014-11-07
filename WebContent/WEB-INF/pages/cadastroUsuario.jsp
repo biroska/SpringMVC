@@ -14,9 +14,7 @@
 		<tr>
 			<td width="20%">&nbsp;</td>
 			<td>
-
-
-				<form action="logar" method="post">
+				<form action="cadastroUsuario" method="post">
 
 					<jsp:include page="menu.jsp" />
 					<div class="page-header">
@@ -56,8 +54,8 @@
 							<td>
 								<div class="input-group" align="center">
 									<span class="input-group-addon"><spring:message code="label.email" />:</span> <input
-										name="email" id="email" type="password" class="form-control"
-										placeholder="e-mail@e-mail.com" value="" size="20" />
+										name="email" id="email" type="text" class="form-control"
+										placeholder="email@email.com" value="" size="20" />
 								</div>
 							</td>
 							<td width="20%">&nbsp;</td>
@@ -76,6 +74,5 @@
 			<td width="20%">&nbsp;</td>
 		</tr>
 	</table>
-
 </body>
 </html>

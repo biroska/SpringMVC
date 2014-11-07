@@ -10,20 +10,24 @@ public class Usuario {
 	private Long id;
 	private String usuario;
 	private String senha;
-//	private String nome;
 	private String email;
 	
 	public Usuario() {
 		super();
 	}
-	public Usuario(Long id, String usuario, String senha) {
+	public Usuario(Long id, String usuario, String senha, String email) {
 		this.usuario = usuario;
 		this.senha = senha;
-		Random r = new Random();
 		this.id = id;
-//		this.nome = usuario +" " + usuario;
-		this.email = usuario + "@mock.com.br"; 
+		this.email = email; 
 	}
+	
+	public Usuario(String usuario, String senha, String email) {
+		this.usuario = usuario;
+		this.senha = senha;
+		this.email = email; 
+	}
+	
 	public Long getId() {
 		return id;
 	}
@@ -42,12 +46,6 @@ public class Usuario {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	/*public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}*/
 	public String getEmail() {
 		return email;
 	}

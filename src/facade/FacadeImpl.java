@@ -19,8 +19,6 @@ public class FacadeImpl {
 	
 	public Long inserirUsuario( Usuario user ){
 		
-//		user = new Usuario( new Long(4), "teste4", "123456");
-		
 		return usuarioDao.inserirUsuario(user);
 	}
 	

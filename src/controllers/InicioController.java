@@ -29,7 +29,7 @@ public class InicioController {
 		int qtdUsers = 5;
 		usuarios = new ArrayList<Usuario>( qtdUsers );
 		for (int i = 1; i < qtdUsers ; i++) {
-			usuarios.add( new Usuario( Long.valueOf(i), String.valueOf( "usuario_" + i ), "123456" ) );
+			usuarios.add( new Usuario( String.valueOf( "usuario_" + i ), "123456", "email@email.com" ) );
 		}
 	}
 

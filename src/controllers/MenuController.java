@@ -36,7 +36,7 @@ public class MenuController {
 		logger.info( "MenuController.inicio()" );
 		
 		model.addAttribute("abaSelecionada", "inicio" );
-		return "forward:principal";
+		return "principal";
 	}
 	
 	@RequestMapping("menuCadastroUsuario")
@@ -44,6 +44,6 @@ public class MenuController {
 		logger.info( "MenuController.cadastroUsuario()" );
 		
 		model.addAttribute("abaSelecionada", "usuario" );
-		return "forward:cadastroUsuario";
+		return "cadastroUsuario";
 	}
 }

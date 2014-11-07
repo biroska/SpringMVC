@@ -23,12 +23,10 @@ public class LoginController {
 	public String logar( Usuario user, HttpSession session ){
 		System.out.println("LoginController.logar(): " + user.getUsuario() +" - "+ user.getSenha() );
 		
-		logger.info("This is an info log entry: " + user.getUsuario() +" - "+ user.getSenha() );
-		logger.warn("This is warn : " + user.getUsuario() +" - "+ user.getSenha() );
-		logger.error("This is error : " + user.getUsuario() +" - "+ user.getSenha() );
-		logger.fatal("This is fatal : " + user.getUsuario() +" - "+ user.getSenha() );
-		
-//		facade.inserirUsuario(user);
+//		logger.info("This is an info log entry: " + user.getUsuario() +" - "+ user.getSenha() );
+//		logger.warn("This is warn : " + user.getUsuario() +" - "+ user.getSenha() );
+//		logger.error("This is error : " + user.getUsuario() +" - "+ user.getSenha() );
+//		logger.fatal("This is fatal : " + user.getUsuario() +" - "+ user.getSenha() );
 		
 		if ( facade.autenticausuarioSenha( user ) ){
 			session.setAttribute("usuarioLogado", user );
