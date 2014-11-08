@@ -1,7 +1,5 @@
 package modelo;
 
-import java.util.Random;
-
 import org.springframework.stereotype.Component;
 
 @Component

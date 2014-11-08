@@ -38,15 +38,18 @@
 	<bean id="dataSource"
         class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-<!--  Conexão MySQL
+
+<!--  Conexão MySQL -->
 		<property name="url" value="jdbc:mysql://localhost:3306/spring" />
         <property name="username" value="root" />
         <property name="password" value="2904pior" />
--->
-<!--  Conexão Xampp -->
+
+<!--  Conexão Xampp 
 		<property name="url" value="jdbc:mysql://localhost/spring_mvc" />
         <property name="username" value="root" />
         <property name="password" value="" />
+-->
+
     </bean>
 
 <!-- Configuração do JDBC Template com a injeção do dataSource -->    

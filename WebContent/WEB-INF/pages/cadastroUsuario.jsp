@@ -21,6 +21,19 @@
 						<h2>Cadastro de Usuários</h2>
 					</div>
 					<table width="100%">
+						<c:if test="${validacao == 'false'}">
+							<tr>
+								<td width="20%">&nbsp;</td>
+								<td>
+									<div class="alert alert-danger" role="alert" style="text-align: left;">
+										<c:forEach items="${msgsErro}" var="msg">
+											<span class="glyphicon glyphicon-asterisk"></span> ${msg} <br />
+										</c:forEach>
+									</div>
+								</td>
+								<td width="20%">&nbsp;</td>
+							</tr>
+						</c:if>
 						<tr>
 							<td width="20%">&nbsp;</td>
 							<td>

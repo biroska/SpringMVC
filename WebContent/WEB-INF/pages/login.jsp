@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" 	 uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,6 +15,19 @@
 					<h1>Acesso</h1>
 				</td>
 			</tr>
+			<c:if test="${validacao == 'false'}">
+				<tr>
+					<td width="40%" >&nbsp;</td>
+					<td align="center">
+						<div class="alert alert-danger" role="alert" style="text-align: left;">
+						<c:forEach items="${msgsErro}" var="msg">
+							<span class="glyphicon glyphicon-asterisk"></span> ${msg} <br />
+						</c:forEach>
+						</div>
+					</td>
+					<td width="40%" >&nbsp;</td>
+				</tr>
+			</c:if>
 			<tr>
 				<td width="40%" >&nbsp;</td>
 				<td>
