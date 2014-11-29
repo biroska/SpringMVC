@@ -61,4 +61,18 @@ public class UsuarioDAO extends UtilDAO {
 		
 		return keyHolder.getKey().longValue();
 	}
+	
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public List<Usuario> buscaUsuario( Usuario user ){
+		
+		String sql = " SELECT id FROM usuario " +
+					 " WHERE usuario = ? ";
+		
+		List<Usuario> query = getJdbcTemplate().query( sql,
+				                 new Object[] { user.getUsuario()},
+				   								new BeanPropertyRowMapper(Usuario.class) );
+		
+		return ( query != null && query.size() > 0 ? query : null );
+	}
+	
 }

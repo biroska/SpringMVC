@@ -1,6 +1,7 @@
 package controllers;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import modelo.Usuario;
 
@@ -16,6 +17,7 @@ public class UsuarioController {
 
 	@Autowired
 	FacadeImpl facade;
+	private List<Usuario> buscaUsuario;
 	
 	@RequestMapping("cadastroUsuario")
 	public String cadastroUsuario( Usuario user, Model model ){
@@ -31,26 +33,25 @@ public class UsuarioController {
 		return "cadastroUsuario";
 	}
 	
-	private boolean validacao( Usuario user, Model model ){
-		
+	private boolean validacao(Usuario user, Model model) {
+
 		ArrayList<String> msgsErro = new ArrayList();
-		
-		if ( user.getUsuario() != null && user.getSenha() != null && user.getEmail() != null ){
-			if ( user.getUsuario().isEmpty() || user.getSenha().isEmpty() || user.getEmail().isEmpty() ){
+
+		ArrayList<Usuario> userList = (ArrayList<Usuario>) facade.buscaUsuario(user);
+		if (userList != null && userList.size() > 0) {
+			msgsErro.add("Usuário Já Existe");
+			model.addAttribute("validacao", false);
+			model.addAttribute("msgsErro", msgsErro);
+		}
+
+		if (user.getUsuario() != null && user.getSenha() != null && user.getEmail() != null) {
+			if (user.getUsuario().isEmpty() || user.getSenha().isEmpty()
+					|| user.getEmail().isEmpty()) {
 				msgsErro.add("Todos os campos são obrigatórios");
 				model.addAttribute("validacao", false);
-				model.addAttribute("msgsErro", msgsErro );
-				
-				return false;
+				model.addAttribute("msgsErro", msgsErro);
 			}
-		}else{
-			msgsErro.add("Todos os campos são obrigatórios");
-			model.addAttribute("validacao", false);
-			model.addAttribute("msgsErro", msgsErro );
-			
-			return false;
 		}
-		return true;
-	}
-	
+		return msgsErro.size() == 0;
+	}	
 }

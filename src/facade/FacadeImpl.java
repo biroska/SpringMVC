@@ -1,5 +1,7 @@
 package facade;
 
+import java.util.List;
+
 import modelo.Usuario;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +22,11 @@ public class FacadeImpl {
 	public Long inserirUsuario( Usuario user ){
 		
 		return usuarioDao.inserirUsuario(user);
+	}
+	
+	public List<Usuario> buscaUsuario( Usuario user ){
+		
+		return usuarioDao.buscaUsuario(user);
 	}
 	
 }
