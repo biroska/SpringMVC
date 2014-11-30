@@ -34,12 +34,23 @@
 								<td width="20%">&nbsp;</td>
 							</tr>
 						</c:if>
+						<c:if test="${sucesso == 'true'}">
+							<tr>
+								<td width="20%">&nbsp;</td>
+								<td>
+									<div class="alert alert-info" role="alert" style="text-align: left;">
+											<output>${msgSucesso}</output>
+									</div>
+								</td>
+								<td width="20%">&nbsp;</td>
+							</tr>
+						</c:if>
 						<tr>
 							<td width="20%">&nbsp;</td>
 							<td>
 								<div class="input-group" align="center">
 									<span class="input-group-addon"><spring:message code="label.usuario" />:</span> <input
-										name="usuario" id="usuario" class="form-control"
+										name="usuario" id="usuario" class="form-control" maxlength="20"
 										placeholder="<spring:message code="label.usuario" />" type="text" value="" size="20" />
 								</div>
 							</td>
@@ -53,7 +64,7 @@
 							<td>
 								<div class="input-group" align="center">
 									<span class="input-group-addon"><spring:message code="label.senha" />:</span> <input
-										name="senha" id="senha" type="password" class="form-control"
+										name="senha" id="senha" type="password" class="form-control" maxlength="10"
 										value="" size="20" />
 								</div>
 							</td>
@@ -67,7 +78,7 @@
 							<td>
 								<div class="input-group" align="center">
 									<span class="input-group-addon"><spring:message code="label.email" />:</span> <input
-										name="email" id="email" type="text" class="form-control"
+										name="email" id="email" type="text" class="form-control" maxlength="40"
 										placeholder="email@email.com" value="" size="20" />
 								</div>
 							</td>

@@ -27,7 +27,10 @@ public class UsuarioController {
 			
 			if ( id != null ){
 				user.setId( id );
-			}			
+			}
+			model.addAttribute("sucesso", true);
+			model.addAttribute("msgSucesso", "Usuário Cadastrado com Sucesso");
+			
 		}
 		
 		return "cadastroUsuario";
