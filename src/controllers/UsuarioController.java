@@ -56,5 +56,16 @@ public class UsuarioController {
 			}
 		}
 		return msgsErro.size() == 0;
-	}	
+	}
+	
+	@RequestMapping("consultaUsuario")
+	public String consultaUsuario( Usuario user, Model model ){
+		
+		Usuario u = new Usuario();
+		u.setUsuario("biroska");
+		
+		facade.buscaUsuario( u );
+		
+		return "consultaUsuario";
+	}
 }

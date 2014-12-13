@@ -28,5 +28,4 @@ public class FacadeImpl {
 		
 		return usuarioDao.buscaUsuario(user);
 	}
-	
 }

@@ -15,7 +15,7 @@
 					<a href="#mydropbar" class="dropdown-toggle" data-toggle="dropdown"><spring:message code="label.usuario" /><b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="menuCadastroUsuario"><spring:message code="label.cadastro" /></a></li>
-							<li><a href="cadastroUsuario"><spring:message code="label.consulta" /></a></li>
+							<li><a href="menuConsultaUsuario"><spring:message code="label.consulta" /></a></li>
 						</ul>
 				</li>
 				

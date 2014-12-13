@@ -3,6 +3,7 @@ package DAOs;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import modelo.Usuario;
@@ -16,6 +17,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class UsuarioDAO extends UtilDAO {
 
+	private boolean controleWhere;
+	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public boolean autenticausuarioSenha( Usuario user ){
 		
@@ -65,14 +68,32 @@ public class UsuarioDAO extends UtilDAO {
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public List<Usuario> buscaUsuario( Usuario user ){
 		
-		String sql = " SELECT id FROM usuario " +
-					 " WHERE usuario = ? ";
+		controleWhere = false;
 		
-		List<Usuario> query = getJdbcTemplate().query( sql,
-				                 new Object[] { user.getUsuario()},
-				   								new BeanPropertyRowMapper(Usuario.class) );
+		ArrayList<Object> parametros = new ArrayList<Object>();
 		
-		return ( query != null && query.size() > 0 ? query : null );
+		String sql = " SELECT *  FROM usuario ";
+		
+		if ( user.getUsuario() != null && !user.getUsuario().isEmpty() ){
+			sql = sql + controleWhere( controleWhere ) + " usuario = ? ";
+			parametros.add( user.getUsuario() );
+		}
+		
+		if ( user.getEmail() != null && !user.getEmail().isEmpty() ){
+			sql = sql + controleWhere( controleWhere ) + " email = ? ";
+			parametros.add( user.getEmail() );
+		}
+		
+		
+		List<Usuario> queryForList = getJdbcTemplate().query( sql, new BeanPropertyRowMapper(Usuario.class), parametros.toArray() );
+		
+		System.out.println("UsuarioDAO.buscaUsuario(): " + queryForList.size() );
+		
+		return null;
 	}
 	
+	private String controleWhere( boolean controle ){
+		controleWhere = true;
+		return controle ? " and " : " where ";
+	}
 }

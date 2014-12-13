@@ -46,4 +46,12 @@ public class MenuController {
 		model.addAttribute("abaSelecionada", "usuario" );
 		return "cadastroUsuario";
 	}
+	
+	@RequestMapping("menuConsultaUsuario")
+	public String consultaUsuario( Usuario user, Model model ){
+		logger.info( "MenuController.consultaUsuario()" );
+		
+		model.addAttribute("abaSelecionada", "usuario" );
+		return "forward:consultaUsuario";
+	}
 }
