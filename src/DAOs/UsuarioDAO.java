@@ -8,6 +8,7 @@ import java.util.List;
 
 import modelo.Usuario;
 
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
@@ -85,7 +86,17 @@ public class UsuarioDAO extends UtilDAO {
 		}
 		
 		
-		List<Usuario> queryForList = getJdbcTemplate().query( sql, new BeanPropertyRowMapper(Usuario.class), parametros.toArray() );
+		List<Usuario> queryForList = null;
+		try {
+			queryForList = getJdbcTemplate().query( sql, new BeanPropertyRowMapper (Class.forName("modelo.Usuario") ), parametros.toArray() );
+		} catch (DataAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+//		List<Usuario> queryForList = getJdbcTemplate().query( sql, new BeanPropertyRowMapper(Usuario.class), parametros.toArray() );
 		
 		System.out.println("UsuarioDAO.buscaUsuario(): " + queryForList.size() );
 		
