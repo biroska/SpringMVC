@@ -40,9 +40,9 @@ public class UsuarioController {
 
 		ArrayList<String> msgsErro = new ArrayList();
 
-		ArrayList<Usuario> userList = (ArrayList<Usuario>) facade.buscaUsuario(user);
+		ArrayList<Usuario> userList = (ArrayList<Usuario>) facade.validaUnicidadeUsuario(user);
 		if (userList != null && userList.size() > 0) {
-			msgsErro.add("Usuário Já Existe");
+			msgsErro.add("Nome de Usuário Já Existe");
 			model.addAttribute("validacao", false);
 			model.addAttribute("msgsErro", msgsErro);
 		}
@@ -62,9 +62,11 @@ public class UsuarioController {
 	public String consultaUsuario( Usuario user, Model model ){
 		
 		Usuario u = new Usuario();
-		u.setUsuario("biroska");
+//		u.setUsuario("biroska");
 		
-		facade.buscaUsuario( u );
+		List<Usuario> listaUsuarios = facade.buscaUsuario( u );
+		
+		model.addAttribute("listaUsuarios", listaUsuarios);
 		
 		return "consultaUsuario";
 	}

@@ -28,4 +28,10 @@ public class FacadeImpl {
 		
 		return usuarioDao.buscaUsuario(user);
 	}
+	
+	public List<Usuario> validaUnicidadeUsuario( Usuario user ){
+		Usuario u = new Usuario();
+		u.setUsuario( user.getUsuario() );
+		return usuarioDao.buscaUsuario(u);
+	}
 }

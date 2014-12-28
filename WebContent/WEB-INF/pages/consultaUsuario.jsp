@@ -26,20 +26,28 @@
 					  <table class="table  table-striped table-bordered table-hover">
 						<thead>
 							<tr>
+								<th style="display: none;" ><spring:message code="label.id" /></th>
 								<th><spring:message code="label.usuario" /></th>
 								<th><spring:message code="label.email" /></th>
 							</tr>
 						</thead>
-						<tbody>
-							<tr>
-								<td>Aimbere</td>
-								<td>Aimbere@aimbere.com</td>
-							</tr>
-							<tr>
-								<td>Teste</td>
-								<td>teste@teste.com</td>
-							</tr>
-						</tbody>
+							<tbody>
+								<c:if test="${not empty listaUsuarios}">
+									<c:forEach var="user" items="${listaUsuarios}">
+										<tr>
+											<td style="display: none;">
+												${user.id}
+											</td>
+											<td>
+												${user.usuario}
+											</td>
+											<td>
+												${user.email}
+											</td>
+										</tr>
+									</c:forEach>
+								</c:if>
+							</tbody>
 					  </table>
 					</div>
 				</form>

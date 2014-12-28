@@ -100,7 +100,7 @@ public class UsuarioDAO extends UtilDAO {
 		
 		System.out.println("UsuarioDAO.buscaUsuario(): " + queryForList.size() );
 		
-		return null;
+		return queryForList != null && queryForList.size() > 0 ? queryForList : null;
 	}
 	
 	private String controleWhere( boolean controle ){
