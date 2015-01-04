@@ -8,6 +8,7 @@ import modelo.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import facade.FacadeImpl;
@@ -59,12 +60,9 @@ public class UsuarioController {
 	}
 	
 	@RequestMapping("consultaUsuario")
-	public String consultaUsuario( Usuario user, Model model ){
+	public String consultaUsuario( @ModelAttribute("usuario") Usuario user, Model model ){
 		
-		Usuario u = new Usuario();
-//		u.setUsuario("biroska");
-		
-		List<Usuario> listaUsuarios = facade.buscaUsuario( u );
+		List<Usuario> listaUsuarios = facade.buscaUsuario( user );
 		
 		model.addAttribute("listaUsuarios", listaUsuarios);
 		

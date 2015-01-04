@@ -76,13 +76,13 @@ public class UsuarioDAO extends UtilDAO {
 		String sql = " SELECT *  FROM usuario ";
 		
 		if ( user.getUsuario() != null && !user.getUsuario().isEmpty() ){
-			sql = sql + controleWhere( controleWhere ) + " usuario = ? ";
-			parametros.add( user.getUsuario() );
+			sql = sql + controleWhere( controleWhere ) + " usuario like ? ";
+			parametros.add( "%" + user.getUsuario() + "%" );
 		}
 		
 		if ( user.getEmail() != null && !user.getEmail().isEmpty() ){
-			sql = sql + controleWhere( controleWhere ) + " email = ? ";
-			parametros.add( user.getEmail() );
+			sql = sql + controleWhere( controleWhere ) + " email like ? ";
+			parametros.add( "%" + user.getEmail() + "%" );
 		}
 		
 		
